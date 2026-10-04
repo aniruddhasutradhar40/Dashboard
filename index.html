@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Professional Profile Development Service | Professional Gyan</title>
+<title>Services | Professional Gyan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,17 +26,36 @@
     background:var(--bg);
     font-family:'Poppins','Hind Siliguri',system-ui,sans-serif;
     color:var(--ink);
-    display:flex;align-items:center;justify-content:center;
-    padding:32px 16px;
+    padding:32px 16px 48px;
   }
+  .wrap{width:100%;max-width:440px;margin:0 auto}
+
+  /* Divisions */
+  .division{margin-bottom:44px}
+  .division:last-child{margin-bottom:0}
+  .div-head{
+    display:flex;align-items:center;gap:12px;
+    margin:0 4px 20px;
+  }
+  .div-head h2{
+    font-size:1.25rem;font-weight:600;color:var(--accent);letter-spacing:.3px;
+    white-space:nowrap;
+  }
+  .div-head .line{
+    flex:1;height:5px;border-radius:5px;
+    box-shadow:inset 2px 2px 4px var(--shadow-dark),inset -2px -2px 4px var(--shadow-light);
+  }
+
+  /* Card */
   .card{
-    width:100%;max-width:440px;
+    width:100%;
     background:var(--card);
     border-radius:22px;
     padding:28px 28px 30px;
     box-shadow:14px 14px 30px var(--shadow-dark),-10px -10px 26px var(--shadow-light);
     border:1px solid rgba(255,255,255,.55);
   }
+  .card + .card{margin-top:30px}
   .thumb{
     display:block;width:100%;aspect-ratio:1254/705;object-fit:cover;
     border-radius:20px;
@@ -76,6 +95,7 @@
     font-family:'Hind Siliguri','Poppins',sans-serif;
     font-size:2rem;font-weight:700;color:var(--accent);line-height:1;
   }
+  .price.free{color:var(--green)}
   .btn{
     margin-top:24px;
     display:flex;align-items:center;justify-content:center;gap:12px;
@@ -94,6 +114,25 @@
     box-shadow:inset 4px 4px 9px var(--shadow-dark),inset -4px -4px 9px var(--shadow-light);
   }
   .btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+  /* Boot-camp placeholder */
+  .placeholder{
+    text-align:center;padding:38px 24px;
+    border-radius:22px;
+    box-shadow:inset 7px 7px 15px var(--shadow-dark),inset -7px -7px 15px var(--shadow-light);
+  }
+  .placeholder .icon{
+    width:54px;height:54px;margin:0 auto 14px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:5px 5px 11px var(--shadow-dark),-4px -4px 10px var(--shadow-light);
+  }
+  .placeholder .icon svg{width:26px;height:26px;fill:var(--accent)}
+  .placeholder h3{font-size:1.15rem;font-weight:600;color:var(--ink)}
+  .placeholder p{
+    margin-top:8px;font-family:'Hind Siliguri','Poppins',sans-serif;
+    font-size:1.02rem;line-height:1.8;color:var(--ink-soft);
+  }
+
   @media (max-width:420px){
     .card{padding:20px 18px 24px;border-radius:18px}
     .title{font-size:1.3rem}
@@ -104,32 +143,76 @@
 </style>
 </head>
 <body>
-  <article class="card">
-    <img class="thumb"
-         src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyWIE8xETnmvDAPBhfECmkEMf-MpPvTSWvXEoOqgonOoB70A2MSN5421VDQe_3PDUa2TYNtbycds1rLzgv2_IMRKizSaDIKvmuTxTR_oyB9THW5XcNmzgQvsWCDQbjB5Pz31-d7lBQ13PNgrCveMYsia-XMoxQqEXidosBYkm19pEWRKGqtDO6pacUX2iS/s1254/WhatsApp%20Image%202026-10-03%20at%206.17.53%20PM.jpeg"
-         alt="Professional Profile Development Service" loading="lazy">
+<main class="wrap">
 
-    <h1 class="title">Professional Profile Development Service<span class="tick" aria-label="Verified"></span></h1>
-
-    <div class="rating" role="img" aria-label="Rated 4.5 out of 5">
-      <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
-      <svg class="sm" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+  <!-- ========== BOOT-CAMP ========== -->
+  <section class="division" id="bootcamp" aria-labelledby="h-bootcamp">
+    <div class="div-head"><h2 id="h-bootcamp">Boot-camp</h2><span class="line"></span></div>
+    <div class="placeholder">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5.4l4.2 2.5-.8 1.3L11 13V7h2z"/></svg>
+      </div>
+      <h3>Coming Soon</h3>
+      <p>Boot-camp কোর্সগুলো শীঘ্রই এখানে যুক্ত করা হবে।</p>
     </div>
+  </section>
 
-    <p class="desc">Professional Gyan-এর Professional Profile Development Service আপনার ব্যক্তিগত ও পেশাগত পরিচিতিকে আরও প্রফেশনালভাবে উপস্থাপন করতে সহায়তা করবে। এই সার্ভিসে থাকছে LinkedIn Full Profile Making, ATS-Friendly CV Writing, Modern Professional Profile Website এবং LinkedIn Personal Branding E-Book—যার মাধ্যমে আপনার Online Presence, Career Profile ও Personal Branding আরও শক্তিশালী হবে।</p>
+  <!-- ========== ONE TO ONE SERVICE ========== -->
+  <section class="division" id="one-to-one" aria-labelledby="h-one">
+    <div class="div-head"><h2 id="h-one">One To One Service</h2><span class="line"></span></div>
 
-    <div class="price-box">
-      <span class="price-label">সার্ভিস প্রাইস</span>
-      <span class="price">৳2,000</span>
-    </div>
+    <article class="card">
+      <img class="thumb"
+           src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyWIE8xETnmvDAPBhfECmkEMf-MpPvTSWvXEoOqgonOoB70A2MSN5421VDQe_3PDUa2TYNtbycds1rLzgv2_IMRKizSaDIKvmuTxTR_oyB9THW5XcNmzgQvsWCDQbjB5Pz31-d7lBQ13PNgrCveMYsia-XMoxQqEXidosBYkm19pEWRKGqtDO6pacUX2iS/s1254/WhatsApp%20Image%202026-10-03%20at%206.17.53%20PM.jpeg"
+           alt="Professional Profile Development Service" loading="lazy">
 
-    <a class="btn" href="https://aniruddhasutradhar40.github.io/Personal-Profile-Making/">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 007 17h12v-2H7.4l1.1-2h7.5a2 2 0 001.7-1l3.6-6.5A1 1 0 0020.4 4H5.2l-.9-2z"/></svg>
-      Enrollment Details
-    </a>
-  </article>
+      <h3 class="title">Professional Profile Development Service<span class="tick" aria-label="Verified"></span></h3>
+
+      <div class="rating" role="img" aria-label="Rated 4.5 out of 5">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+        <svg class="sm" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>
+      </div>
+
+      <p class="desc">Professional Gyan-এর Professional Profile Development Service আপনার ব্যক্তিগত ও পেশাগত পরিচিতিকে আরও প্রফেশনালভাবে উপস্থাপন করতে সহায়তা করবে। এই সার্ভিসে থাকছে LinkedIn Full Profile Making, ATS-Friendly CV Writing, Modern Professional Profile Website এবং LinkedIn Personal Branding E-Book—যার মাধ্যমে আপনার Online Presence, Career Profile ও Personal Branding আরও শক্তিশালী হবে।</p>
+
+      <div class="price-box">
+        <span class="price-label">সার্ভিস প্রাইস</span>
+        <span class="price">৳2,000</span>
+      </div>
+
+      <a class="btn" href="https://aniruddhasutradhar40.github.io/Personal-Profile-Making/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 007 17h12v-2H7.4l1.1-2h7.5a2 2 0 001.7-1l3.6-6.5A1 1 0 0020.4 4H5.2l-.9-2z"/></svg>
+        Enrollment Details
+      </a>
+    </article>
+  </section>
+
+  <!-- ========== EXAM ========== -->
+  <section class="division" id="exam" aria-labelledby="h-exam">
+    <div class="div-head"><h2 id="h-exam">Exam</h2><span class="line"></span></div>
+
+    <article class="card">
+      <img class="thumb"
+           src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC46pE4fVFPv9na01esZQq6FRIRxCw5t7HVGrl8MFnpBj57WsATU2BaAHeXVG0PNAvKGKJQbegXji3CT0mFTRzZ8JHMBevE6GilmTB_bnTa45pf1IxZWyxVrMzGTFFRGrFCmpDDZUB98JO9lEzo1f-RS-v7Adp3PxT_eFk0Bmv7wymfNcipUS1GMnpUV5j/s1254/Accounting%20Fresher%20Interview%20Mock%20Test%20Poster.png"
+           alt="Accounting Fresher Interview Mock Test Poster" loading="lazy">
+
+      <h3 class="title">Fresher Interview Mock Test (MCQ)</h3>
+
+      <div class="price-box">
+        <span class="price-label">Service Charge</span>
+        <span class="price free">Free</span>
+      </div>
+
+      <a class="btn" href="https://aniruddhasutradhar40.github.io/ACC-TEST/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        Start Exam
+      </a>
+    </article>
+  </section>
+
+</main>
 </body>
 </html>
