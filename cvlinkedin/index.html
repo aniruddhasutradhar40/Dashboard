@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkedIn Profile &amp; ATS-Friendly CV Making Service | Professional Gyan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#e8eaf2;
+    --card:#e6e9f1;
+    --ink:#2b2d4a;
+    --muted:#5f6580;
+    --navy:#232552;
+    --line:#d3d7e3;
+    --shadow-dark:rgba(163,170,196,.55);
+    --shadow-light:rgba(255,255,255,.95);
+    --green-deep:#128C7E;
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--ink); }
+  body {
+    font-family:"Poppins","Hind Siliguri","Noto Sans Bengali","Kalpurush","Segoe UI",Arial,sans-serif;
+    line-height:1.8; font-size:17px;
+  }
+  main { max-width:760px; margin:0 auto; padding:28px 18px 56px; }
 
+  /* Neumorphic card */
+  .card {
+    background:linear-gradient(145deg,#eceef5,#e3e6ef);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:28px;
+    box-shadow:10px 10px 28px var(--shadow-dark), -10px -10px 28px var(--shadow-light);
+    margin-bottom:30px; padding:22px; overflow:hidden;
+  }
+
+  /* Card 1: poster + price + enroll */
+  .poster {
+    display:block; width:100%; height:auto; border-radius:22px;
+    box-shadow:0 8px 22px rgba(35,37,82,.18);
+  }
+  .svc-name {
+    margin:22px 4px 14px; font-size:28px; font-weight:500; line-height:1.35;
+    color:var(--navy); letter-spacing:.2px;
+  }
+  .buy {
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    padding:18px 22px; border-radius:22px; margin-top:6px;
+    background:linear-gradient(145deg,#e3e6ef,#eceef5);
+    box-shadow:inset 4px 4px 10px rgba(163,170,196,.35), inset -4px -4px 10px rgba(255,255,255,.9),
+               6px 6px 16px var(--shadow-dark), -6px -6px 16px var(--shadow-light);
+  }
+  .fee { margin:0; display:flex; align-items:center; justify-content:space-between; gap:14px; flex:1; line-height:1.2; }
+  .fee small { font-size:16px; font-weight:500; color:var(--muted); }
+  .fee span { font-size:32px; font-weight:700; color:var(--navy); }
+  .fee span em { font-style:normal; font-size:16px; font-weight:600; color:var(--muted); margin-left:4px; }
+  .enroll {
+    display:inline-block; padding:13px 30px; border-radius:16px;
+    font-size:19px; font-weight:700; text-decoration:none; white-space:nowrap;
+    color:#04210f; background:linear-gradient(145deg,#2ee173,#20c75d);
+    box-shadow:6px 6px 14px rgba(32,160,90,.35), -4px -4px 12px rgba(255,255,255,.9);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .enroll:hover { transform:translateY(-1px); box-shadow:8px 8px 18px rgba(32,160,90,.42), -4px -4px 12px rgba(255,255,255,.95); }
+  .enroll:active { transform:translateY(1px); }
+  .enroll:focus-visible { outline:3px solid var(--navy); outline-offset:3px; }
+
+  @media (max-width:520px){
+    .card { padding:16px; border-radius:24px; }
+    .svc-name { font-size:22px; }
+    .buy { flex-direction:column; align-items:stretch; padding:16px; }
+    .fee span { font-size:28px; }
+    .enroll { text-align:center; padding:14px 18px; font-size:18px; }
+  }
+
+  /* Card 2: all details */
+  .details { padding:12px 26px 24px; }
+  .details h2 { font-size:22px; font-weight:600; margin:28px 0 10px; color:var(--navy); }
+  .details h3 { font-size:18px; font-weight:600; margin:20px 0 4px; color:var(--navy); }
+  .details p { margin:0 0 10px; color:var(--muted); }
+  .details p strong { color:var(--ink); }
+  .details ul { padding-left:22px; margin:0 0 10px; color:var(--muted); }
+  .details li { margin-bottom:6px; }
+  .details hr {
+    border:0; height:4px; border-radius:4px; margin:28px 0 4px;
+    background:var(--bg);
+    box-shadow:inset 2px 2px 4px rgba(163,170,196,.5), inset -2px -2px 4px rgba(255,255,255,.9);
+  }
+  .contact a { color:var(--green-deep); font-weight:700; text-decoration:none; }
+  @media (max-width:520px){ .details { padding:6px 12px 18px; } }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- Card 1: Poster + Price + Enroll -->
+  <section class="card">
+    <img class="poster" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjv3_9dunPEUeDjTLn-v-ehF6IoQXxk3U9dCTCO-SB9r85Dmy4Tmtk22IK5f7SJUPNP1cbeQb4SODtM1cz5pNBhd0X0G5_5BA8bHiWIclYeaaqFoXRxDUxTxnl2zmVn262eTvFnGycfBBEyhwKGeLRfRhrzzvFREUMPKWnyL3w0JZYH5pkuAKHXUlzA5mOM/s1402/LinkedIn%20Profile%20and%20ATS%20CV%20Service%20Banner.png" alt="LinkedIn Profile &amp; ATS-Friendly CV Making Service - Poster">
+    <h1 class="svc-name">LinkedIn Profile &amp; ATS-Friendly CV Making Service</h1>
+    <div class="buy">
+      <p class="fee"><small>Service Fee</small><span>950<em>BDT</em></span></p>
+      <!-- নিচের href এ আপনার Google Form লিংক বসান -->
+      <a class="enroll" id="enrollLink" href="https://forms.gle/87u1CVHZquzVme5w7">Enroll Now</a>
+    </div>
+  </section>
+
+  <!-- Card 2: All details -->
+  <section class="card details">
+
+    <h2>Enroll কীভাবে করবেন?</h2>
+    <p>Enrollment সম্পন্ন করতে নিচের ধাপগুলো অনুসরণ করুন:</p>
+    <p><strong>Step 1:</strong> Enroll Now অপশনে ক্লিক করুন।</p>
+    <p><strong>Step 2:</strong> আপনাকে একটি Google Form-এ নিয়ে যাওয়া হবে।</p>
+    <p><strong>Step 3:</strong> Google Form-এ দেওয়া নির্দেশনা অনুযায়ী bKash / Nagad-এ Send Money (Personal) করুন।</p>
+    <p><strong>Step 4:</strong> Payment সম্পন্ন করার পর প্রয়োজনীয় তথ্য দিয়ে Google Form পূরণ করে Submit করুন।</p>
+    <p><strong>Step 5:</strong> Form Submit করার পর আপনার Enrollment Complete হবে।</p>
+    <p>আমাদের Team ২৪ ঘণ্টার মধ্যে আপনার সঙ্গে যোগাযোগ করবে।</p>
+
+    <hr>
+
+    <h2>Service Details</h2>
+    <h3>LinkedIn Profile &amp; ATS-Friendly CV Making Service</h3>
+    <p>Professional Gyan-এর LinkedIn Profile &amp; ATS-Friendly CV Making Service আপনার ব্যক্তিগত ও পেশাগত পরিচিতিকে আরও প্রফেশনালভাবে উপস্থাপন করতে সহায়তা করবে।</p>
+
+    <h2>আমাদের সার্ভিসসমূহ</h2>
+
+    <h3>1. LinkedIn Full Profile Making</h3>
+    <p>Professional Full Profile Setup, Cover Photo Design, Headline, About/Summary, Skills, Education ও Experience Optimization।</p>
+
+    <h3>2. ATS-Friendly CV Writing</h3>
+    <p>ATS-Friendly Format, Professional Design এবং গুরুত্বপূর্ণ Skills ও Experience Highlighting।</p>
+
+    <h3>3. LinkedIn Personal Branding E-Book</h3>
+    <p>LinkedIn Profile Optimization, Content Strategy, Networking ও Personal Branding সম্পর্কে একটি সহায়ক E-Book।</p>
+
+    <h2>অতিরিক্ত 150 Taka চার্জ প্রযোজ্য</h2>
+    <p>পরবর্তীতে CV &amp; LinkedIn Profile-এ কোনো Update, Modification বা Additional Information যোগ করতে চাইলে তার জন্য আলাদা চার্জ প্রযোজ্য হবে।</p>
+
+    <h2>যোগাযোগ</h2>
+    <p class="contact">যেকোনো প্রয়োজনে WhatsApp করুন:<br>
+      <a href="https://wa.me/8801570219399">01570-219399</a></p>
+
+  </section>
+
+</main>
+</body>
+</html>
