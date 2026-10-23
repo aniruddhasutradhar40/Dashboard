@@ -1,1 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accounting Basics MCQ Mock Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#3b4cca;--primary-dark:#232552;--primary-soft:#dde1f0;--background:#e8eaf2;--card:#e6e9f1;--text:#2b2d4a;--muted:#5f6580;--border:#d3d7e3;--ok:#0a7a45;--ok-soft:#dcf1e6;--bad:#b42318;--bad-soft:#f6e1e0;--warn:#a15c00;--warn-soft:#f6ead2;--radius:24px;
+--sd:rgba(163,170,196,.55);--sl:rgba(255,255,255,.95);
+--raised:8px 8px 22px var(--sd),-8px -8px 22px var(--sl);
+--small:5px 5px 12px var(--sd),-5px -5px 12px var(--sl);
+--inset:inset 4px 4px 10px rgba(163,170,196,.45),inset -4px -4px 10px rgba(255,255,255,.9)}
+*{box-sizing:border-box}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{font-family:"Poppins","Hind Siliguri","Noto Sans Bengali","Nirmala UI",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--background);color:var(--text);line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:22px 16px 40px}
+.card{background:linear-gradient(145deg,#eceef5,#e3e6ef);border:1px solid rgba(255,255,255,.7);border-radius:var(--radius);box-shadow:var(--raised);padding:24px;margin-bottom:22px}
+h1{font-size:1.6rem;margin:0 0 8px;line-height:1.3;font-weight:500;color:var(--primary-dark)}
+h2{font-size:1.25rem;margin:0 0 14px;font-weight:600;color:var(--primary-dark)}
+.hidden{display:none!important}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+.btn{border:0;background:linear-gradient(145deg,#4558e0,#3140b8);color:#fff;padding:12px 22px;border-radius:16px;font-weight:600;min-height:48px;box-shadow:6px 6px 14px rgba(59,76,202,.32),-5px -5px 12px var(--sl);transition:transform .15s,box-shadow .15s}
+.btn:hover:not(:disabled){transform:translateY(-1px)}
+.btn:active:not(:disabled){transform:translateY(1px);box-shadow:inset 3px 3px 8px rgba(0,0,0,.25)}
+.btn.sec{background:linear-gradient(145deg,#eceef5,#e3e6ef);color:var(--primary-dark);box-shadow:var(--small)}
+.btn.sec:active:not(:disabled){box-shadow:var(--inset)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.start{text-align:center;padding:42px 22px}
+.start p{color:var(--muted);max-width:520px;margin:0 auto 24px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:0 0 28px;padding:0;list-style:none}
+.facts li{background:var(--background);border-radius:16px;padding:12px 8px;font-weight:600;color:var(--primary-dark);box-shadow:var(--inset)}
+.btn.big{font-size:1.1rem;padding:14px 40px}
+.top{position:sticky;top:8px;z-index:5}
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}
+.bar strong{font-size:1.02rem;color:var(--primary-dark)}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;padding:7px 16px;border-radius:999px;background:var(--background);color:var(--primary-dark);box-shadow:var(--inset)}
+.timer.warn{color:var(--warn);background:var(--warn-soft)}
+.timer.urgent{color:var(--bad);background:var(--bad-soft);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.6}}
+.prog{height:10px;background:var(--background);border-radius:99px;overflow:hidden;margin-top:12px;box-shadow:var(--inset)}
+.prog div{height:100%;width:0;background:linear-gradient(90deg,#4558e0,#3140b8);border-radius:99px;transition:width .3s}
+.qlabel{color:var(--primary);font-weight:700;margin:0 0 6px}
+.qtext{font-size:1.2rem;font-weight:500;margin:0 0 20px;color:var(--primary-dark)}
+.opts{display:grid;gap:14px;border:0;padding:0;margin:0}
+.opt{display:flex;align-items:center;gap:12px;border:0;border-radius:18px;padding:14px 16px;min-height:58px;cursor:pointer;background:linear-gradient(145deg,#eceef5,#e3e6ef);box-shadow:var(--small);transition:box-shadow .15s}
+.opt:hover{box-shadow:7px 7px 16px var(--sd),-7px -7px 16px var(--sl)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .dot{flex:none;width:22px;height:22px;border-radius:50%;background:var(--background);box-shadow:var(--inset);display:grid;place-items:center}
+.opt.sel{background:var(--background);box-shadow:var(--inset);color:var(--primary-dark);font-weight:600}
+.opt.sel .dot{background:var(--primary);box-shadow:0 0 0 4px var(--background),0 0 0 6px var(--primary)}
+.opt:focus-within{outline:3px solid var(--primary);outline-offset:3px}
+.opt b{flex:none}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:10px}
+.gb{height:44px;border-radius:14px;border:0;background:linear-gradient(145deg,#eceef5,#e3e6ef);box-shadow:4px 4px 9px var(--sd),-4px -4px 9px var(--sl);font-weight:600;color:var(--muted)}
+.gb.ans{box-shadow:var(--inset);background:var(--background);color:var(--primary-dark)}
+.gb.cur{background:linear-gradient(145deg,#4558e0,#3140b8);color:#fff;box-shadow:4px 4px 10px rgba(59,76,202,.35)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);margin-top:16px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:5px;background:linear-gradient(145deg,#eceef5,#e3e6ef);box-shadow:2px 2px 4px var(--sd),-2px -2px 4px var(--sl);vertical-align:-2px;margin-right:6px}
+.legend .a{background:var(--background);box-shadow:var(--inset)}.legend .c{background:var(--primary);box-shadow:none}
+.result{text-align:center}
+.ring{--p:0;width:176px;height:176px;border-radius:50%;margin:10px auto 20px;display:grid;place-items:center;background:conic-gradient(var(--primary) calc(var(--p)*1%),var(--border) 0);box-shadow:var(--small)}
+.ring span{width:130px;height:130px;border-radius:50%;background:var(--background);box-shadow:var(--inset);display:grid;place-items:center;font-size:2rem;font-weight:700;color:var(--primary-dark)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin:18px 0}
+.stat{border-radius:18px;padding:14px;background:var(--background);box-shadow:var(--inset)}
+.stat b{display:block;font-size:1.4rem;color:var(--primary-dark)}
+.status{display:inline-block;padding:8px 20px;border-radius:999px;font-weight:700;margin:6px 0;box-shadow:var(--small)}
+.status.good{background:var(--ok-soft);color:var(--ok)}.status.mid{background:var(--warn-soft);color:var(--warn)}.status.low{background:var(--bad-soft);color:var(--bad)}
+.note{font-size:.85rem;color:var(--muted)}
+.banner{background:var(--warn-soft);color:var(--warn);border-radius:16px;padding:12px;margin-bottom:14px;font-weight:600;box-shadow:var(--inset)}
+.rv{border-left:6px solid var(--border)}
+.rv.ok{border-left-color:var(--ok)}.rv.no{border-left-color:var(--bad)}.rv.sk{border-left-color:var(--warn)}
+.tag{font-weight:700;display:inline-block;margin:4px 0}
+.ok .tag{color:var(--ok)}.no .tag{color:var(--bad)}.sk .tag{color:var(--warn)}
+.rv p{margin:6px 0}
+.exp{background:var(--background);border-radius:16px;padding:12px 16px;margin-top:12px;box-shadow:var(--inset)}
+.modal{position:fixed;inset:0;background:rgba(35,37,82,.45);display:grid;place-items:center;padding:16px;z-index:20}
+.dlg{background:linear-gradient(145deg,#eceef5,#e3e6ef);border-radius:var(--radius);padding:26px;max-width:420px;width:100%;box-shadow:var(--raised)}
+.dlg .nav{justify-content:flex-end}
+@media(max-width:520px){.wrap{padding:12px 10px 30px}.card{padding:16px;border-radius:22px}h1{font-size:1.3rem}.nav .btn{flex:1;padding:12px 8px}.qtext{font-size:1.08rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
 
+<section id="startScreen" class="card start">
+  <h1>Accounting Basics MCQ Mock Test</h1>
+  <p>Test your fundamental accounting knowledge with 35 multiple-choice questions.</p>
+  <ul class="facts"><li>35 Questions</li><li>30 Minutes</li><li>MCQ Format</li><li>Instant Result</li><li>Bangla Explanations</li></ul>
+  <button type="button" class="btn big" id="startBtn">Start Test</button>
+</section>
+
+<section id="testScreen" class="hidden">
+  <div class="card top">
+    <div class="bar"><strong>Accounting Basics MCQ Mock Test</strong><span class="timer" id="timer" role="timer">Time Left: 30:00</span></div>
+    <div class="bar" style="margin-top:8px"><span id="progText">Question 1 of 35</span></div>
+    <div class="prog" role="progressbar" aria-valuemin="1" aria-valuemax="35" aria-valuenow="1" id="progAria"><div id="progFill"></div></div>
+  </div>
+  <div class="card" id="qCard"></div>
+  <div class="nav" style="margin:0 0 16px">
+    <button type="button" class="btn sec" id="prevBtn">Previous</button>
+    <button type="button" class="btn" id="nextBtn">Next</button>
+  </div>
+  <div class="card">
+    <h2>Question Navigator</h2>
+    <div class="grid" id="navGrid"></div>
+    <div class="legend"><span><i class="c"></i>Current</span><span><i class="a"></i>Answered</span><span><i></i>Unanswered</span></div>
+  </div>
+</section>
+
+<section id="resultScreen" class="hidden">
+  <div class="card result">
+    <div id="autoMsg" class="banner hidden">Time is up. Your test has been submitted automatically.</div>
+    <h1>Your Result</h1>
+    <div class="ring" id="ring"><span id="ringTxt">0%</span></div>
+    <div><b id="scoreLine" style="font-size:1.4rem"></b></div>
+    <div class="stats" id="stats"></div>
+    <div id="statusBox"></div>
+    <p class="note">This is only a learning/feedback status and not an official certification.</p>
+  </div>
+  <h2 style="margin:20px 4px 12px">Review Answers</h2>
+  <div id="review"></div>
+  <div style="text-align:center;margin-bottom:16px"><button type="button" class="btn big" id="retakeBtn">Retake Test</button></div>
+</section>
+
+</main>
+
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalMsg">
+  <div class="dlg">
+    <p id="modalMsg" style="font-weight:600;margin-top:0"></p>
+    <div class="nav"><button type="button" class="btn sec" id="cancelBtn">Cancel</button><button type="button" class="btn" id="confirmBtn">Submit Test</button></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+var DURATION = 30 * 60;
+/* [question, [4 options], correct option index, Bangla explanation] */
+var RAW = [
+["Which of the following is NOT a core financial statement?",["Income Statement","Statement of Cash Flows","Trial Balance","Balance Sheet"],2,"Trial Balance একটি গুরুত্বপূর্ণ accounting tool হলেও এটি core financial statement নয়। এটি financial statements প্রস্তুতের আগে accounts-এর debit ও credit balance যাচাই করতে ব্যবহৃত হয়।"],
+["Which of the following is a form of Income Statement?",["Single-Step Income Statement","Condensed Income Statement","Common-Size Income Statement","All of the above"],3,"Single-Step, Condensed এবং Common-Size—সবগুলোই Income Statement উপস্থাপনের বিভিন্ন form।"],
+["Which account types normally increase with a debit?",["Assets, Expenses, Losses","Assets, Revenue, Gains","Expenses, Liabilities, Losses","Gains, Expenses, Liabilities"],0,"Assets, Expenses এবং Losses-এর normal balance Debit। তাই Debit করলে এই accountগুলো সাধারণত বৃদ্ধি পায়। অন্যদিকে Revenue, Liabilities ও Equity Credit-এ বাড়ে।"],
+["Which statement about Accounts Receivable is TRUE?",["It is a current asset","It increases by credits","It is generated when customers make cash payments","It becomes more valuable as it ages"],0,"Accounts Receivable হলো customer-এর কাছে business-এর পাওনা টাকা এবং সাধারণত এটি Current Asset হিসেবে Balance Sheet-এ দেখানো হয়। এটি Debit-এ বাড়ে, আর পুরোনো হলে আদায়ের সম্ভাবনা কমে।"],
+["Under cash-basis accounting, revenue is generally recorded:",["When cash is collected","When revenue is earned","When Accounts Receivable is created","At the end of the fiscal year"],0,"Cash-basis accounting-এ cash পাওয়া গেলে revenue record করা হয়। Revenue কখন earned হয়েছে, সেটি এখানে মূল timing নয়।"],
+["What are the main sections of a Balance Sheet?",["Assets, Liabilities, Income","Assets, Liabilities, Equity","Assets, Liabilities, Expenses","Assets, Gains, Revenue"],1,"Balance Sheet-এর তিনটি প্রধান অংশ হলো Assets, Liabilities এবং Equity। এগুলো business-এর financial position দেখায়।"],
+["How can financial statements be used?",["For internal analysis","For external negotiations","For compliance","All of the above"],3,"Financial statements management-এর internal analysis, bank/investor-এর মতো external parties-এর সিদ্ধান্ত এবং বিভিন্ন compliance requirement—সব ক্ষেত্রেই ব্যবহৃত হয়।"],
+["Which transaction increases Accounts Payable?",["A customer fails to pay an invoice","A supplier delivers raw materials on credit","Office supplies are purchased with cash","None of the above"],1,"Supplier-এর কাছ থেকে credit-এ raw materials কিনলে business-এর পরিশোধযোগ্য liability তৈরি হয়। তাই Accounts Payable বৃদ্ধি পায়।"],
+["Which of the following is a major area of knowledge for the CPA exam?",["Auditing","Accounting software packages only","International banking laws only","None of the above"],0,"Auditing CPA examination-এর একটি গুরুত্বপূর্ণ knowledge area। শুধু accounting software বা international banking laws জানা যথেষ্ট নয়।"],
+["A customer converts an unpaid credit sale into a 24-month, 5% promissory note. What should the company record?",["Nothing","Increase Accounts Receivable for interest","Record a Note Receivable","Record a liability"],2,"Customer-এর কাছ থেকে promissory note পাওয়া গেলে company-এর একটি Note Receivable তৈরি হয়। ২৪ মাসের term হওয়ায় এটি সাধারণত non-current asset হিসেবে বিবেচিত হবে।"],
+["Under accrual-basis accounting, liabilities are generally recorded:",["When incurred","When paid","At year-end only","When bank accounts are reconciled"],0,"Accrual accounting-এ liability যখন incurred হয় তখনই record করা হয়, cash payment পরে হলেও।"],
+["Which statement about accounting time periods is TRUE?",["Current liabilities are payable within two years","A Balance Sheet shows financial position at a specific point in time","Time value of money is never relevant to accounting","Accounts Receivable become easier to collect as they age"],1,"Balance Sheet একটি নির্দিষ্ট তারিখে business-এর Assets, Liabilities এবং Equity-এর financial position দেখায়। আর Income Statement একটি সময়কালের ফলাফল দেখায়।"],
+["Purchasing Property, Plant & Equipment (PP&E) is classified on the Statement of Cash Flows as:",["Source of cash from investing activities","Source of cash from financing activities","Use of cash from investing activities","Use of cash from operating activities"],2,"PP&E কেনার জন্য cash বের হয়ে যায় এবং এটি long-term investment। তাই এটি Investing Activities-এর cash outflow।"],
+["A company takes a five-year $100,000 business loan. What is the correct entry?",["Debit non-current asset $100,000; Credit non-current liability $100,000","Debit current asset $100,000; Credit non-current liability $100,000","Debit non-current liability $100,000; Credit non-current asset $100,000","Debit current liability $100,000; Credit current asset $100,000"],1,"Loan পাওয়ার ফলে Cash/Bank একটি Current Asset হিসেবে Debit হবে এবং পাঁচ বছরের loan হওয়ায় Non-current Liability Credit হবে।"],
+["Which account is directly associated with Cost of Goods Sold?",["Accrued Interest","Depreciation","Dividends","Inventory"],3,"Cost of Goods Sold হিসাব করার ক্ষেত্রে Inventory গুরুত্বপূর্ণ। সাধারণভাবে COGS = Beginning Inventory + Purchases − Ending Inventory।"],
+["Which organizations are involved in the development of U.S. accounting standards?",["FASB","GASB","SEC","All of the above"],3,"FASB, GASB এবং SEC—U.S. financial reporting ও accounting standards/regulation-এর বিভিন্ন ক্ষেত্রে গুরুত্বপূর্ণ ভূমিকা রাখে।"],
+["Which inventory valuation method generally leaves the newest inventory costs in ending inventory?",["LIFO","Average Cost","FIFO","Specific Identification"],2,"FIFO-তে পুরোনো inventory আগে sold হয়েছে বলে ধরা হয়। তাই period শেষে থাকা inventory সাধারণত সর্বশেষ purchase-এর cost-এর কাছাকাছি হয়।"],
+["Which statement about intercompany accounting is NOT true?",["Intercompany transactions are between units within the same legal entity","Intercompany transactions are eliminated in consolidated financial statements","They can significantly impact taxes","They can occur between different legal entities under common parent control"],0,"Intercompany transaction সাধারণত common parent-এর অধীনে থাকা আলাদা legal entities-এর মধ্যে হয়। তাই ‘same legal entity’ বলা সঠিক নয়।"],
+["Which depreciation method is generally used for U.S. tax purposes but is not GAAP-compliant?",["Straight-Line Method","MACRS","Double-Declining Balance","Units of Production"],1,"MACRS হলো U.S. tax depreciation system। এটি tax purposes-এর জন্য ব্যবহৃত হয় এবং সাধারণ financial reporting-এর GAAP depreciation method নয়।"],
+["What is the most commonly used method for amortizing intangible assets?",["Straight-Line Method","Sum-of-the-Years'-Digits","Double-Declining Balance","Units of Production"],0,"Intangible asset-এর useful life নির্দিষ্ট হলে Straight-Line Method ব্যবহার করে সমানভাবে amortization expense allocate করা সাধারণ পদ্ধতি।"],
+["Which financial statement reports revenues and expenses over a specific period?",["Statement of Changes in Equity","Income Statement","Statement of Cash Flows","Balance Sheet"],1,"Income Statement একটি নির্দিষ্ট সময়ের Revenue ও Expenses দেখিয়ে সেই period-এর profit বা loss নির্ধারণ করে।"],
+["A company makes a $3,000 sale: $1,200 cash and $1,800 on credit. Which entry correctly records the transaction?",["Debit A/R $1,800; Debit Cash $1,200; Credit Revenue $3,000","Debit Revenue $3,000; Credit Cash $1,200; Credit A/R $1,800","Debit A/P $1,800; Debit Cash $1,200; Credit Revenue $3,000","Credit Cash $1,200; Credit A/P $1,800; Debit Revenue $3,000"],0,"Cash sale অংশে Cash $1,200 Debit এবং credit sale অংশে A/R $1,800 Debit হবে। মোট $3,000 Revenue Credit হবে, ফলে Debit ও Credit সমান থাকে।"],
+["Which is NOT a financing cash flow?",["Paying off debt","Purchasing equipment","Paying dividends","Issuing shares"],1,"Equipment purchase হলো Investing Activity। Debt, shares এবং dividends সাধারণত Financing Activities-এর সঙ্গে সম্পর্কিত।"],
+["On which side of a ledger are debits recorded?",["Left","Right","Both sides","Depends on the account"],0,"Accounting ledger-এ Debit সবসময় বাম পাশে এবং Credit ডান পাশে record করা হয়।"],
+["Are assets on the Balance Sheet generally recorded at estimated fair market value?",["Yes, always","No, generally based on historical cost","Sometimes, depending on applicable accounting rules","Only for cash"],1,"অনেক asset সাধারণত historical cost ভিত্তিতে record করা হয়। তবে নির্দিষ্ট accounting standards অনুযায়ী কিছু ক্ষেত্রে অন্য measurement basis প্রযোজ্য হতে পারে।"],
+["Increasing an asset account involves:",["Crediting the account","Debiting the account","Closing the account","No entry"],1,"Assets-এর normal balance Debit। তাই Asset বৃদ্ধি পেলে সাধারণত Debit করা হয়।"],
+["Unearned Revenue is classified as:",["Current Asset","Equity","Non-current Asset","Liability"],3,"Customer আগে টাকা দিয়েছে কিন্তু business এখনও goods বা service দেয়নি। তাই এটি business-এর একটি obligation বা Liability।"],
+["What is the minimum number of accounts involved in a double-entry accounting transaction?",["One","Two","Four","Five"],1,"Double-entry accounting-এ অন্তত দুটি account থাকে—কমপক্ষে একটি Debit এবং একটি Credit। ফলে Debit ও Credit-এর মোট amount সমান থাকে।"],
+["The complete listing of financial accounts used by a company is called:",["Chart of Accounts","Journal Entry","Balance Sheet","P&L Statement"],0,"Chart of Accounts হলো company যে financial accounts ব্যবহার করে সেগুলোর একটি organized list।"],
+["Which is NOT normally classified as a current asset?",["Cash","Inventory","Accounts Receivable","Property"],3,"Cash, Inventory এবং Accounts Receivable সাধারণত Current Assets। Property সাধারণত দীর্ঘমেয়াদি asset হওয়ায় Non-current Asset।"],
+["Which formula correctly calculates Operating Income?",["Revenue + Operating Costs","Operating Expenses − Revenue","Gross Income − Operating Expenses","Gross Profit + Operating Expenses"],2,"Operating Income বের করতে Gross Income বা Gross Profit থেকে Operating Expenses বাদ দেওয়া হয়।"],
+["Which statement about accrual accounting is TRUE?",["Revenue is recorded only when cash is received","All prepaid revenue is recognized immediately","Revenue can be recognized when goods/services are provided and recognition criteria are met","Expenses are always recognized only when paid"],2,"Accrual accounting-এ revenue সাধারণত তখন recognize করা হয় যখন তা earned হয় এবং প্রয়োজনীয় recognition criteria পূরণ করে—cash পাওয়া কখনও কখনও পরে হতে পারে।"],
+["A debit decreases which account?",["Cash","Accounts Payable","Supplies Expense","Both A and C"],1,"Accounts Payable একটি Liability। Liability-এর normal balance Credit, তাই Debit করলে Accounts Payable কমে যায়। Cash ও Expense Debit-এ বাড়ে।"],
+["Which statement describes the Double-Declining Balance depreciation method?",["Depreciation is higher in later years","It produces equal depreciation every year","It is an accelerated depreciation method","It eliminates depreciation in the first year"],2,"Double-Declining Balance একটি accelerated depreciation method। এতে asset-এর প্রথম দিকের বছরগুলোতে বেশি depreciation expense এবং পরের বছরগুলোতে কম expense হয়।"],
+["Which calculation does NOT yield EBIT?",["Revenue − Cost of Goods Sold − Operating Expenses","Net Income + Tax Expense + Interest Expense","Sales + Taxes + Interest","Gross Profit − Operating Expenses"],2,"EBIT অর্থ Earnings Before Interest and Taxes। শুধু Sales-এর সঙ্গে Taxes ও Interest যোগ করলে EBIT পাওয়া যায় না।"]
+];
+
+/* Question bank with stable IDs: options carry ids, correct answer is an id */
+var QUESTIONS = RAW.map(function (r, i) {
+  return {
+    id: i + 1,
+    question: r[0],
+    options: r[1].map(function (t, k) { return { id: "q" + (i + 1) + "o" + k, text: t }; }),
+    correctAnswer: "q" + (i + 1) + "o" + r[2],
+    explanation: r[3]
+  };
+});
+
+var LETTERS = ["A", "B", "C", "D"];
+var state = { qs: [], answers: {}, index: 0, endTime: 0, timerId: null, submitted: false, pendingAuto: false };
+var $ = function (id) { return document.getElementById(id); };
+
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+function esc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function show(id) { ["startScreen", "testScreen", "resultScreen"].forEach(function (s) { $(s).classList.toggle("hidden", s !== id); }); window.scrollTo(0, 0); }
+function fmt(sec) { var m = Math.floor(sec / 60), s = sec % 60; return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s; }
+
+function startTest() {
+  clearInterval(state.timerId);
+  state.qs = shuffle(QUESTIONS).map(function (q) {
+    return { id: q.id, question: q.question, options: shuffle(q.options), correctAnswer: q.correctAnswer, explanation: q.explanation };
+  });
+  state.answers = {};
+  state.index = 0;
+  state.submitted = false;
+  show("testScreen");
+  renderQuestion();
+  startTimer();
+}
+
+function renderQuestion() {
+  var q = state.qs[state.index], total = state.qs.length, sel = state.answers[q.id];
+  var html = '<p class="qlabel">Question ' + (state.index + 1) + '</p><p class="qtext" id="qt">' + esc(q.question) + '</p>' +
+    '<fieldset class="opts" aria-labelledby="qt"><legend class="hidden">Choose one answer</legend>';
+  q.options.forEach(function (o, k) {
+    var on = sel === o.id;
+    html += '<label class="opt' + (on ? " sel" : "") + '"><input type="radio" name="ans" value="' + o.id + '"' + (on ? " checked" : "") + '>' +
+      '<span class="dot" aria-hidden="true"></span><span><b>' + LETTERS[k] + '.</b> ' + esc(o.text) + '</span></label>';
+  });
+  html += "</fieldset>";
+  $("qCard").innerHTML = html;
+  Array.prototype.forEach.call($("qCard").querySelectorAll("input"), function (inp) {
+    inp.addEventListener("change", function () { selectAnswer(q.id, inp.value); });
+  });
+  $("progText").textContent = "Question " + (state.index + 1) + " of " + total;
+  $("progFill").style.width = ((state.index + 1) / total * 100) + "%";
+  $("progAria").setAttribute("aria-valuenow", state.index + 1);
+  $("prevBtn").disabled = state.index === 0;
+  $("nextBtn").textContent = state.index === total - 1 ? "Submit Test" : "Next";
+  renderNavGrid();
+}
+
+function renderNavGrid() {
+  var g = $("navGrid");
+  g.innerHTML = "";
+  state.qs.forEach(function (q, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    var ans = !!state.answers[q.id];
+    b.className = "gb" + (i === state.index ? " cur" : ans ? " ans" : "");
+    b.textContent = i + 1;
+    b.setAttribute("aria-label", "Go to question " + (i + 1) + (ans ? ", answered" : ", unanswered") + (i === state.index ? ", current" : ""));
+    if (i === state.index) b.setAttribute("aria-current", "true");
+    b.addEventListener("click", function () { state.index = i; renderQuestion(); });
+    g.appendChild(b);
+  });
+}
+
+function selectAnswer(qid, optId) {
+  state.answers[qid] = optId;
+  var labels = $("qCard").querySelectorAll(".opt");
+  Array.prototype.forEach.call(labels, function (l) {
+    l.classList.toggle("sel", l.querySelector("input").value === optId);
+  });
+  renderNavGrid();
+}
+
+function nextQuestion() {
+  if (state.index < state.qs.length - 1) { state.index++; renderQuestion(); }
+  else openConfirm();
+}
+function previousQuestion() {
+  if (state.index > 0) { state.index--; renderQuestion(); }
+}
+
+function openConfirm() {
+  var unanswered = state.qs.length - Object.keys(state.answers).length;
+  $("modalMsg").textContent = unanswered > 0
+    ? "You have unanswered questions. Are you sure you want to submit?"
+    : "Are you sure you want to submit your test?";
+  $("modal").classList.remove("hidden");
+  $("cancelBtn").focus();
+}
+function closeConfirm() { $("modal").classList.add("hidden"); }
+
+function startTimer() {
+  clearInterval(state.timerId);
+  state.endTime = Date.now() + DURATION * 1000;
+  tick();
+  state.timerId = setInterval(tick, 250);
+}
+function tick() {
+  var left = Math.max(0, Math.ceil((state.endTime - Date.now()) / 1000));
+  var t = $("timer");
+  t.textContent = "Time Left: " + fmt(left);
+  t.className = "timer" + (left <= 60 ? " urgent" : left <= 300 ? " warn" : "");
+  if (left <= 0) { submitTest(true); }
+}
+
+function submitTest(auto) {
+  if (state.submitted) return;
+  state.submitted = true;
+  clearInterval(state.timerId);
+  closeConfirm();
+  var r = calculateResult();
+  showResults(r, !!auto);
+}
+
+function calculateResult() {
+  var correct = 0, wrong = 0, skipped = 0;
+  state.qs.forEach(function (q) {
+    var a = state.answers[q.id];
+    if (!a) skipped++;
+    else if (a === q.correctAnswer) correct++;
+    else wrong++;
+  });
+  var total = state.qs.length;
+  var pct = Math.round(correct / total * 1000) / 10;
+  return { correct: correct, wrong: wrong, skipped: skipped, total: total, pct: pct };
+}
+
+function showResults(r, auto) {
+  show("resultScreen");
+  $("autoMsg").classList.toggle("hidden", !auto);
+  var pctTxt = (r.pct % 1 === 0 ? r.pct.toFixed(0) : r.pct.toFixed(1)) + "%";
+  $("ring").style.setProperty("--p", r.pct);
+  $("ringTxt").textContent = pctTxt;
+  $("scoreLine").textContent = "Score: " + r.correct + " / " + r.total + " • Percentage: " + pctTxt;
+  $("stats").innerHTML =
+    '<div class="stat"><b>' + r.correct + '</b>Correct</div><div class="stat"><b>' + r.wrong + '</b>Wrong</div><div class="stat"><b>' + r.skipped + '</b>Skipped</div>';
+  var cls, label;
+  if (r.pct >= 80) { cls = "good"; label = "Excellent / Passed"; }
+  else if (r.pct >= 60) { cls = "mid"; label = "Good / Keep Practicing"; }
+  else { cls = "low"; label = "Need More Practice"; }
+  $("statusBox").innerHTML = 'Status: <span class="status ' + cls + '">' + label + "</span>";
+  renderAnswerReview();
+}
+
+function renderAnswerReview() {
+  var html = "";
+  state.qs.forEach(function (q, i) {
+    var a = state.answers[q.id];
+    function lbl(id) {
+      for (var k = 0; k < q.options.length; k++) if (q.options[k].id === id) return LETTERS[k] + ". " + esc(q.options[k].text);
+      return "";
+    }
+    var cls, tag, mine = "";
+    if (!a) { cls = "sk"; tag = "⚠ Skipped"; }
+    else if (a === q.correctAnswer) { cls = "ok"; tag = "✓ Correct"; mine = "<p><b>Your Answer:</b> " + lbl(a) + "</p>"; }
+    else { cls = "no"; tag = "✗ Wrong"; mine = "<p><b>Your Answer:</b> " + lbl(a) + "</p>"; }
+    html += '<article class="card rv ' + cls + '"><p class="qlabel">Question ' + (i + 1) + '</p><p class="qtext">' + esc(q.question) + "</p>" +
+      mine + '<span class="tag">' + tag + "</span><p><b>Correct Answer:</b> " + lbl(q.correctAnswer) + "</p>" +
+      '<div class="exp"><b>সহজ ব্যাখ্যা:</b><br>' + esc(q.explanation) + "</div></article>";
+  });
+  $("review").innerHTML = html;
+}
+
+function retakeTest() {
+  clearInterval(state.timerId);
+  state.answers = {}; state.index = 0; state.submitted = false;
+  $("timer").textContent = "Time Left: 30:00";
+  $("timer").className = "timer";
+  show("startScreen");
+}
+
+$("startBtn").addEventListener("click", startTest);
+$("prevBtn").addEventListener("click", previousQuestion);
+$("nextBtn").addEventListener("click", nextQuestion);
+$("cancelBtn").addEventListener("click", closeConfirm);
+$("confirmBtn").addEventListener("click", function () { submitTest(false); });
+$("retakeBtn").addEventListener("click", retakeTest);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !$("modal").classList.contains("hidden")) closeConfirm();
+});
+</script>
+</body>
+</html>
